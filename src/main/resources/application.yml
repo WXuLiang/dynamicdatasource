@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      db1:
+        url: jdbc:mysql://localhost:3306/test
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 300
+        initialSize: 5
+        maxWait: 60000
+        minIdle: 5
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+      db2:
+        url: jdbc:mysql://localhost:3306/test1
+        username: root
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 300
+        initialSize: 5
+        maxWait: 60000
+        minIdle: 5
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.dynamicdatasource.dao
